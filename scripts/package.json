@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/emergrin/examen/issues"
   },
-  "homepage": "https://github.com/emergrin/examen#readme"
+  "homepage": "https://github.com/emergrin/examen#readme",
+  "dependencies": {
+    "json2csv": "^3.11.4"
+  }
 }

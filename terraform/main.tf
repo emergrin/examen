@@ -14,6 +14,10 @@ module "lambda" {
   name = "${var.name}"
 }
 
+module "s3" {
+  source = "./s3"
+  name = "${var.name}"
+}
 
 #############################
 #       Outputs

@@ -10,9 +10,9 @@ resource "aws_iam_role" "role" {
   assume_role_policy = "${data.aws_iam_policy_document.role-policy.json}"
 }
 
-############
-## IAM ROLE POLICY
-############
+####################
+## IAM ROLE POLICY #
+####################
 
 resource "aws_iam_role_policy" "policy" {
   name = "${var.name}-policy"
