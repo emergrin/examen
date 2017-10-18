@@ -2,27 +2,15 @@
 
 option=$OP
 
-case $option in
-  inicial)
-       inicial $aws_access $aws_secret
-  ;;
-  carga)
-       carga
-  ;;
-  *)
-       exit
-  ;;
-esac
-
 function err_ {
 if [ $? != 0 ]; then
       echo "KO: error on $1"
       exit
 else
-      echo "OK: step $1" 
+      echo "OK: step $1"
 fi
 }
-
+echo uno
 function inicial {
 # configure AWS
 echo "[default]" >> ~/.aws/config
@@ -52,3 +40,15 @@ function carga {
   # change files on S3
   curl -o files/$1.json http://www.omdbapi.com/?apikey=3e721637&t=$1
 }
+
+case $option in
+  inicial)
+       inicial $aws_access $aws_secret
+  ;;
+  carga)
+       carga
+  ;;
+  *)
+       exit
+  ;;
+esac
