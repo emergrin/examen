@@ -68,4 +68,6 @@ RUN wget https://releases.hashicorp.com/terraform/0.10.7/terraform_0.10.7_linux_
 RUN unzip terraform_0.10.7_linux_amd64.zip
 RUN mv terraform /usr/bin
 
+RUN git clone https://github.com/emergrin/examen.git 
+
 CMD [ "node" ]

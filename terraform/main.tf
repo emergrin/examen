@@ -2,8 +2,7 @@
 #       variables
 #############################
 
-variable name = "egimenez_exam"
-
+name = "egimenez_exam"
 
 #############################
 #       Modules
