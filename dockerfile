@@ -45,7 +45,7 @@ ENV YARN_VERSION 1.1.0
 RUN set -ex \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
-  ; do \
+  ; d
     gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
     gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
@@ -60,7 +60,7 @@ RUN set -ex \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
 RUN apt-get update
-RUN apt-get -y install unzip awscli
+RUN apt-get -y install unzip awscli zip
 
 RUN mkdir /opt/src
 WORKDIR /opt/src
