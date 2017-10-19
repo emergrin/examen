@@ -9,7 +9,8 @@ else
 fi
 }
 echo "Empezamos"
-function inicial {
+
+function configure {
 # configure AWS
 mkdir ~/.aws
 echo "[default]" >> ~/.aws/config
@@ -19,7 +20,9 @@ echo "aws_access_key_id = $VAR_KEY" >> ~/.aws/config
 
 aws s3 ls
 err_ "aws cli configure"
+}
 
+function inicial {
 # launch terraform
 cd /opt/src/examen
 zip -r ./terraform/lambda/functions/lambda_nodejs.zip lambda_nodejs
@@ -42,9 +45,11 @@ function carga {
 
 case $VAR_OP in
   inicial)
+       configure
        inicial
   ;;
   carga)
+      configure
       for i in $(cat ./$lt2 )
       do
         carga $1
