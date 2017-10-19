@@ -24,8 +24,8 @@ err_ "aws cli configure"
 
 function inicial {
 # launch terraform
-cd /opt/src/examen
-zip -r ./terraform/lambda/functions/lambda_nodejs.zip lambda_nodejs
+
+zip -r ./examen/terraform/lambda/functions/lambda_nodejs.zip ./examen/lambda_nodejs
 err_ "zip script"
 
 cd /opt/src/examen/terraform
