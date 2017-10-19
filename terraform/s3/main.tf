@@ -32,6 +32,10 @@ output "origen" {
   value = "${aws_s3_bucket.origen.arn}"
 }
 
+output "origen_id" {
+  value = "${aws_s3_bucket.origen.id}"
+}
+
 output "destino" {
   value = "${aws_s3_bucket.destino.arn}"
 }

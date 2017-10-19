@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/emergrin/examen#readme",
   "dependencies": {
+    "async": "^2.5.0",
+    "gm": "^1.23.0",
     "json2csv": "^3.11.4"
   }
 }
