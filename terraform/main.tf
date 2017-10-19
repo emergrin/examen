@@ -2,7 +2,10 @@
 #       variables
 #############################
 
-name = "egimenez_exam"
+variable "name" {
+  type    = "string"
+  default = "egimenez_exam"
+}
 
 #############################
 #       Modules
@@ -23,5 +26,5 @@ module "s3" {
 #############################
 
 output "lambda_name" {
-  value = "${module.lambda.lambda_name}"
+  value = "${module.lambda.lambda_arn}"
 }

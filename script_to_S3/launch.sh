@@ -24,16 +24,15 @@ err_ "aws cli configure"
 
 function inicial {
 # launch terraform
-
 zip -r ./examen/terraform/lambda/functions/lambda_nodejs.zip ./examen/lambda_nodejs
 err_ "zip script"
 
 cd /opt/src/examen/terraform
 terraform init
 err_ "terraform init"
-echo "terraform plan -out ./tf.plan.output"
+terraform plan -out ./tf.plan.output
 err_ "terraform plan"
-echo "terraform apply ./tf.apply.output"
+terraform apply ./tf.apply.output
 err_ "terraform init"
 }
 
