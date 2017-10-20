@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "¿Qué desea hacer?, Escriba inicializar o cargar"
+echo "¿Qué desea hacer?, Escriba iniciar o cargar"
 read -p "inicializar o cargar " uno
 read -p "Introduzca su AWS Access Key " key
 read -p "Introduzca su AWS Secret Key " pass
