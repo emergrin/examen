@@ -30,16 +30,27 @@ err_ "zip script"
 cd /opt/src/examen/terraform
 terraform init
 err_ "terraform init"
-terraform plan -out ./tf.plan.output
+terraform get
+err_ "terraform get"
+terraform plan >> ./tf.plan.output
 err_ "terraform plan"
-terraform apply ./tf.apply.output
+terraform apply >> ./tf.apply.output
 err_ "terraform init"
+git add tf.apply.output terraform.tfstate
+git commit -m "terraform output"
 }
 
 function carga {
   # change files on S3
-  curl -o files/$1.json http://www.omdbapi.com/?apikey=$VAR_API&t=$1
-  aws s3 cp /files/$1.json s3://$bucket/
+
+  while read line
+  do
+     curl -o files/$line.json http://www.omdbapi.com/?apikey=$VAR_API&t=$line
+     aws s3 cp /files/$line.json s3://$bucket/
+     a=$(echo "$line" | cut -d "\"" -s -f 2)
+     b=$(echo "$line" | cut -d "\"" -s -f 1 | cut -d " " -s -f 4,5,6,7,8 | cut -d ":" -f 1 | cut -d "K" -f 2 | cut -d "M" -f 2 | cut -d "-" -f 1,2,3)
+     echo "$a;$b" >> RRHH
+  done < caca
 }
 
 case $VAR_OP in
@@ -49,10 +60,7 @@ case $VAR_OP in
   ;;
   carga)
       configure
-      for i in $(cat ./$lt2 )
-      do
-        carga $1
-      done
+      carga
   ;;
   *)
       echo "No está cargada la variable VAR_OP"

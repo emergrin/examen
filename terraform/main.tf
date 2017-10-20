@@ -4,9 +4,17 @@
 
 variable "name" {
   type    = "string"
-  default = "egimenez_exam"
+  default = "egimenez-exam"
 }
 
+variable "region" {
+  type    = "string"
+  default = "eu-west-1"
+}
+
+provider "aws" {
+  region  = "${var.region}"
+}
 #############################
 #       Modules
 #############################
