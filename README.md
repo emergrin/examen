@@ -13,7 +13,10 @@ NPM 5.3.0
 
 # What do you need?
 
-You only need a bash shell script to launch the deploy script and docker component install in your PC.
+To execute this program, you only need two things:
+
+- Technical resource: bash shell script installed on your PC to launch the deploy script and docker component install in your PC to create a container inside this.
+- Accouns: you need a AWS accouts to use the CLI and a OMDB APPi Key to optain the json file.
 
 # Procedure
 
@@ -25,7 +28,14 @@ wget https://github.com/emergrin/examen/blob/master/deploy.sh
 ```
 chmod +x deploy.sh
 ```
-3. Launch the script and select the correct 
+3. Create a simple file with the name of the films and put inside your PC (in the same path that you use to launch the script file):
+```
+Star Wars
+Hellboy
+Big Trouble in Little China
+```
+
+4. Launch the script and select the correct 
 ```
 ./deploy.sh
 ```
