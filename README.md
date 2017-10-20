@@ -28,14 +28,14 @@ wget https://github.com/emergrin/examen/blob/master/deploy.sh
 ```
 chmod +x deploy.sh
 ```
-3. Create a simple file with the name of the films and put inside your PC (in the same path that you use to launch the script file):
+3. Launch the script and select the correct
+```
+./deploy.sh
+```
+If you don't have a valid API Key you can use this list of films
+
 ```
 Star Wars
 Hellboy
 Big Trouble in Little China
-```
-
-4. Launch the script and select the correct 
-```
-./deploy.sh
 ```
