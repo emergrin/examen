@@ -1,28 +1,31 @@
-# Terraform Version
+# Software versions used
+
+## Terraform Version
 Terraform v0.9.11
 
-# NodeJS Version
-NodeJS 6.11.
+## Docker Version
+Docker v17.09.0-ce
+Docker-compose v1.11.2
+
+## NodeJS Version
+NodeJS 6.11
 NPM 5.3.0
+
+# What do you need?
+
+You only need a bash shell script to launch the deploy script and docker component install in your PC.
 
 # Procedure
 
-1.- create a local docker image
-
-```bash
-docker build -t examen:test github.com/emergrin/examen.git
+1. Download the deploy script:
 ```
-2.- launch docker image
-
-a) If you need create the infraestructure use this option
-
-```bash
-docker run --name base -t -d -e VAR_OP=inicial -e VAR_ACC=XXX -e VAR_KEY=YYY examen:test
+wget https://github.com/emergrin/examen/blob/master/deploy.sh
 ```
-
-
-b) If you only need upload files to process use this option
-
-```bash
-docker run --name base -t -d -e VAR_OP=carga -e VAR_ACC=XXX -e VAR_KEY=YYY examen:test
+2. Make executable the script:
+```
+chmod +x deploy.sh
+```
+3. Launch the script and select the correct 
+```
+./deploy.sh
 ```
